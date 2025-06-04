@@ -13,7 +13,7 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 
 void main() async {
-  await setUpServiceLocator();
+  SetUpServiceLocator.inject();
   WidgetsFlutterBinding.ensureInitialized();
   // final networkErrorController = Get.put(NetworkController());
   // ever(networkErrorController.isConnected, (conneted) {

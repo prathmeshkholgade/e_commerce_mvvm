@@ -1,4 +1,4 @@
-class ApiString{
+class ApiString {
   static String baseUrl = "https://fakestoreapi.com";
   static String login = "/auth/login";
   static String user = '/users';

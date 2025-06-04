@@ -1,5 +1,6 @@
 import 'package:e_commerce_app/di/injection.dart';
 import 'package:e_commerce_app/presentation/bloc/products/products_controller.dart';
+import 'package:e_commerce_app/presentation/views/category/category_page.dart';
 import 'package:e_commerce_app/presentation/views/products/widgets/category.dart';
 import 'package:e_commerce_app/presentation/views/products/widgets/image_slider.dart';
 import 'package:e_commerce_app/presentation/views/products/widgets/product_card.dart';
@@ -65,9 +66,12 @@ class _HomePageState extends State<HomePage> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text("Categories"),
-                  Text(
-                    "See All",
-                    style: TextStyle(color: Theme.of(context).primaryColor),
+                  GestureDetector(
+                    onTap: () => Get.to(CategoryPage()),
+                    child: Text(
+                      "See All",
+                      style: TextStyle(color: Theme.of(context).primaryColor),
+                    ),
                   ),
                 ],
               ),

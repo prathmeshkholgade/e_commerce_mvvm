@@ -12,4 +12,28 @@ class ProductRepositoryImp implements ProductRepository {
     // TODO: implement getProducts
     return await productDataSource.getProducts();
   }
+
+  @override
+  Future<Either<Failure, Map<String, dynamic>>> fetchProductByCategory(
+    String category,
+  ) async {
+    return await productDataSource.fetchProductByCategory(category);
+  }
+
+  @override
+  Future<Either<Failure, Map<String, dynamic>>> sortProductsByCategoryprice(
+    String category,
+    String type,
+  ) {
+    // TODO: implement sortProductsByCategoryprice
+    return productDataSource.sortCategoryProductsByPrioce(category, type);
+  }
+
+  @override
+  Future<Either<Failure, Map<String, dynamic>>> sortProductsByprice(
+    String type,
+  ) {
+    // TODO: implement sortProductsByprice
+    return productDataSource.sortProductsByprice(type);
+  }
 }

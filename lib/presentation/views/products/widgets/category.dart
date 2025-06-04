@@ -1,6 +1,12 @@
+import 'package:e_commerce_app/di/injection.dart';
+import 'package:e_commerce_app/presentation/bloc/products/products_controller.dart';
+import 'package:e_commerce_app/presentation/views/category/category_page.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/utils.dart';
 
 class CategoriesList extends StatelessWidget {
+  final productsController = sl<ProductsController>();
   CategoriesList({super.key});
   List CategoriesName = [
     "electronics",
@@ -26,7 +32,9 @@ class CategoriesList extends StatelessWidget {
           return CategoryListWidget(
             img: categoriesImg[index],
             title: CategoriesName[index],
-            onTap: () {},
+            onTap: () async {
+              Get.to(CategoryPage(category: CategoriesName[index]));
+            },
           );
         },
       ),
