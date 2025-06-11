@@ -40,5 +40,5 @@ class Rating {
   Map<String, dynamic> toJson() => {"rate": rate, "count": count};
   // this method will create a json to object
   factory Rating.fromJson(Map<String, dynamic> json) =>
-      Rating(rate: json["rate"], count: json["count"]);
+      Rating(rate: (json["rate"] as num).toDouble(), count: json["count"]);
 }
