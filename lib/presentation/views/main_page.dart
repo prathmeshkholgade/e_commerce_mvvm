@@ -1,6 +1,6 @@
 import 'package:e_commerce_app/presentation/views/cart/cart_page.dart';
 import 'package:e_commerce_app/presentation/views/category/category_page.dart';
-import 'package:e_commerce_app/presentation/views/wishlist/favourite_page.dart';
+import 'package:e_commerce_app/presentation/views/wishlist/wishlist_page.dart';
 import 'package:e_commerce_app/presentation/views/products/home_page.dart';
 import 'package:e_commerce_app/presentation/views/profile/profile_page.dart';
 import 'package:flutter/foundation.dart';
@@ -20,6 +20,7 @@ class _MainPageState extends State<MainPage> {
     CategoryPage(),
     CartPage(),
     // FavouritePage(),
+    WishlistPage(),
     ProfilePage(),
   ];
 
@@ -54,10 +55,10 @@ class _MainPageState extends State<MainPage> {
             icon: Icon(Icons.shopping_cart),
             label: "Cart",
           ),
-          // BottomNavigationBarItem(
-          //   icon: Icon(FontAwesomeIcons.heart),
-          //   label: "Fav",
-          // ),
+          BottomNavigationBarItem(
+            icon: Icon(FontAwesomeIcons.heart),
+            label: "Fav",
+          ),
           BottomNavigationBarItem(icon: Icon(Icons.person), label: "Profile"),
         ],
       ),

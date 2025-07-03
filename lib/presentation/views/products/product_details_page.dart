@@ -1,5 +1,5 @@
 import 'package:e_commerce_app/di/injection.dart';
-import 'package:e_commerce_app/presentation/bloc/products/products_controller.dart';
+import 'package:e_commerce_app/presentation/getx/products/products_controller.dart';
 import 'package:e_commerce_app/presentation/views/products/widgets/add_to_cart_btn.dart';
 import 'package:flutter/material.dart';
 
@@ -18,7 +18,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
     final product = productController.products.firstWhere(
       (product) => product.id == widget.productId,
     );
-    print("this is the single $product");
+    // print("this is the single $product");
     return Scaffold(
       appBar: AppBar(title: Text("Product Details"), centerTitle: true),
       body: Container(

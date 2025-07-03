@@ -1,5 +1,5 @@
 import 'package:e_commerce_app/di/injection.dart';
-import 'package:e_commerce_app/presentation/bloc/auth/auth_controller.dart';
+import 'package:e_commerce_app/presentation/getx/auth/auth_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
@@ -93,6 +93,7 @@ class _LoginpageState extends State<Loginpage> {
                     Container(
                       padding: EdgeInsets.symmetric(vertical: 5),
                       decoration: BoxDecoration(
+                        color: Colors.white,
                         borderRadius: BorderRadius.circular(10),
                         border: Border.all(color: Colors.grey, width: 1),
                         boxShadow: [
@@ -137,7 +138,7 @@ class _LoginpageState extends State<Loginpage> {
                         controller: passwordController,
                         validator:
                             (value) =>
-                                value!.isEmpty ? "Please enter username" : null,
+                                value!.isEmpty ? "Please enter password" : null,
                       ),
                     ),
                     SizedBox(height: 20),

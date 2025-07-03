@@ -11,8 +11,8 @@ import 'package:e_commerce_app/domain/usecase/product/fetch_productby_category_u
 import 'package:e_commerce_app/domain/usecase/product/get_products_usecase.dart';
 import 'package:e_commerce_app/domain/usecase/product/sort_category_product_usecase.dart';
 import 'package:e_commerce_app/domain/usecase/product/sort_products_usecase.dart';
-import 'package:e_commerce_app/presentation/bloc/auth/auth_controller.dart';
-import 'package:e_commerce_app/presentation/bloc/products/products_controller.dart';
+import 'package:e_commerce_app/presentation/getx/auth/auth_controller.dart';
+import 'package:e_commerce_app/presentation/getx/products/products_controller.dart';
 import 'package:get_it/get_it.dart';
 
 final sl = GetIt.instance;

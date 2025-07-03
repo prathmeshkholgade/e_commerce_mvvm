@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:e_commerce_app/data/models/product_model.dart';
 import 'package:e_commerce_app/di/injection.dart';
-import 'package:e_commerce_app/presentation/bloc/products/products_controller.dart';
+import 'package:e_commerce_app/presentation/getx/products/products_controller.dart';
 import 'package:e_commerce_app/presentation/views/products/product_details_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

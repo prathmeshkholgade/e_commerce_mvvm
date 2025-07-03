@@ -2,10 +2,23 @@ import 'package:dio/dio.dart';
 import 'package:e_commerce_app/core/utils/constants.dart';
 import 'package:e_commerce_app/core/utils/exception.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 enum RequestType { get, post, put }
 
 class Helper {
+  static saveApiToken({required String token}) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    prefs.setString("apiToken", token);
+    print("this token saved successfully $token");
+  }
+
+  static loadToken() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    print("api token loaded");
+    return prefs.getString("apiToken") ?? '';
+  }
+
   static Future<Response> sendRequest(
     RequestType type,
     String endPoint, {

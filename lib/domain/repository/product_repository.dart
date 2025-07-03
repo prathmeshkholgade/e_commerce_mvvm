@@ -14,5 +14,6 @@ abstract class ProductRepository {
     String category,
     String type,
   );
+  // Future<Either<Failure, Map<String, dynamic>>> addToCart(ProductModel product);
   // Future<Either<Failure, ProductModel>> getProductsInDetails();
 }

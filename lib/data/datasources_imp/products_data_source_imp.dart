@@ -49,7 +49,7 @@ class ProductsDataSourceImp implements ProductDataSource {
         for (var product in data) {
           products.add(ProductModel.fromJson(product));
         }
-        print("this is the category data $products");
+        // print("this is the category data $products");
         return Right({"products": products});
       } else {
         return left(
@@ -80,7 +80,7 @@ class ProductsDataSourceImp implements ProductDataSource {
         for (var product in response.data) {
           products.add(ProductModel.fromJson(product));
         }
-        print("this is the category data $products");
+        // print("this is the category data $products");
         return Right({"products": products});
       } else {
         return Left(
@@ -109,7 +109,7 @@ class ProductsDataSourceImp implements ProductDataSource {
         for (var product in response.data) {
           products.add(ProductModel.fromJson(product));
         }
-        print("this is the category data $products");
+        // print("this is the category data $products");
         return Right({"products": products});
       } else {
         return Left(

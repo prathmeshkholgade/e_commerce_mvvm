@@ -1,7 +1,7 @@
 import 'package:e_commerce_app/presentation/views/error/network_error_page.dart';
 import 'package:e_commerce_app/di/injection.dart';
-import 'package:e_commerce_app/presentation/bloc/auth/app_cubit.dart';
-import 'package:e_commerce_app/presentation/bloc/auth/auth_controller.dart';
+import 'package:e_commerce_app/presentation/getx/auth/app_cubit.dart';
+import 'package:e_commerce_app/presentation/getx/auth/auth_controller.dart';
 import 'package:e_commerce_app/presentation/views/auth/loginpage.dart';
 import 'package:e_commerce_app/presentation/views/main_page.dart';
 import 'package:flutter/material.dart';
@@ -27,10 +27,21 @@ void main() async {
   runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget {
-  final authController = sl<AuthController>();
-
+class MyApp extends StatefulWidget {
   MyApp({super.key});
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  final authController = sl<AuthController>();
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    authController.loadStoredToken();
+  }
 
   // This widget is the root of your application.
   @override
@@ -41,8 +52,14 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: MainPage(),
-      // authController.token.value.isEmpty ? Loginpage() : MainPage(),
+      home: Obx(() {
+        if (!authController.isTokenInitialized.value) {
+          return const Scaffold(
+            body: Center(child: CircularProgressIndicator()),
+          );
+        }
+        return authController.isLoggedIn ? MainPage() : Loginpage();
+      }),
     );
   }
 }

@@ -1,5 +1,5 @@
 import 'package:e_commerce_app/di/injection.dart';
-import 'package:e_commerce_app/presentation/bloc/products/products_controller.dart';
+import 'package:e_commerce_app/presentation/getx/products/products_controller.dart';
 import 'package:e_commerce_app/presentation/views/category/category_page.dart';
 import 'package:e_commerce_app/presentation/views/products/widgets/category.dart';
 import 'package:e_commerce_app/presentation/views/products/widgets/image_slider.dart';
@@ -30,7 +30,7 @@ class _HomePageState extends State<HomePage> {
     final primaryColor = Theme.of(context).primaryColor;
     final screenWidth = MediaQuery.of(context).size.width;
     final data = productsController.products;
-    print("this is data u have to show on the ui $data");
+    // print("this is data u have to show on the ui $data");
     return Scaffold(
       appBar: AppBar(
         actions: [
